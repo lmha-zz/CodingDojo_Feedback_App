@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+    <% if @all_surveyresults.any? %>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr class="active">
+            <th>Title</th>
+            <th>Name</th>
+            <th>Time</th>
+            <th>Summary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @all_surveyresults_groupedby_surveyid.each do |survey| %>
+            <tr>
+              <td><%= Survey.find(survey.survey_id).title %></td>
+              <td><%= Survey.find(survey.survey_id).author %></td>
+              <td><%= time_ago_in_words(Survey.find(survey.survey_id).created_at) %></td>
+              <td><%= Survey.find(survey.survey_id).survey_results.average(:helpful_scale).round(2) %> (<%= Survey.find(survey.survey_id).survey_results.count %> responses)</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p>No surveys results have been submitted at the moment.</p> 
+    <% end %>
+  </div>
+</div>

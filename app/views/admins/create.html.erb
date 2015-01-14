@@ -1,0 +1,29 @@
+<%= content_for :title do %>
+  CodingDojo Feedbacks Admin
+<% end %>
+
+<%= render "shared/admin_navbar"%>
+
+<%= render partial: "new_survey_form"%>
+
+<%= render partial: "review_results"%>
+
+
+<script>
+  var currentLocation = window.location.hash;
+  updateActiveState(currentLocation);
+
+  $(document).on('click', 'a', function() {
+    $('.active').removeClass('active');
+    currentLocation = $(this).attr('href');
+    updateActiveState(currentLocation);
+  })
+
+  function updateActiveState(location){
+    if(location == "" || location == "#") {
+      $("a[href='#']").parent().addClass('active');
+    } else {
+      $("a[href='#results']").parent().addClass('active');
+    }
+  }
+</script>

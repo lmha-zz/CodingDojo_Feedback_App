@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  helpful_scale: 1
+  feedback: MyText
+  survey_id: 
+
+two:
+  name: MyString
+  helpful_scale: 1
+  feedback: MyText
+  survey_id: 

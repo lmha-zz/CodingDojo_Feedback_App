@@ -1,0 +1,22 @@
+<% if @all_surveys.any? %>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr class="active">
+        <th>Title</th>
+        <th>Name</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @all_surveys.each do |survey| %>
+        <tr>
+          <td><%= survey.title %></td>
+          <td><%= survey.author %></td>
+          <td><%= survey.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+<p>No surveys have been created at the moment.</p> 
+<% end %>
