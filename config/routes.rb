@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'surveys#index'
-  post 'surveys/:survey_id/surveyresults' => 'survey_results#create', as: :survey_results
-  post 'surveys' => 'surveys#create', as: :surveys
-  get 'survey_results/create'
-  get '/meeting/:survey_id' => 'surveys#show'
+  post '/surveys/:survey_id/surveyresults' => 'survey_results#create', as: :survey_results
+  post '/surveys' => 'surveys#create', as: :surveys
+  get 'survey_results/show' => 'survey_results#show'
+  get '/meeting/:survey_id' => 'surveys#show', as: :results
   get '/create' => 'admins#create', as: :create
 
   # The priority is based upon order of creation: first created -> highest priority.

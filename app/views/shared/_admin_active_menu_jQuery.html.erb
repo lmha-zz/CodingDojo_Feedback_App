@@ -1,0 +1,17 @@
+<script>
+  updateActiveState();
+
+  $(document).on('click', 'a', function() {
+    $('.active').removeClass('active');
+    currentLocation = $(this).attr('href');
+    updateActiveState(currentLocation);
+  })
+
+  function updateActiveState(){
+    if(window.location.href.indexOf('show') != -1) {
+      $("a[href='survey_results/show']").parent().addClass('active');
+    } else if(window.location.href.indexOf('/create') != -1) {
+      $("a[href='/create']").parent().addClass('active');
+    }
+  }
+</script>

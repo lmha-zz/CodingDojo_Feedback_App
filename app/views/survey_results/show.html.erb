@@ -1,0 +1,37 @@
+<%= content_for :title do %>
+  CodingDojo Feedbacks Admin
+<% end %>
+
+<%= render "shared/admin_navbar"%>
+
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+    <% if @all_surveyresults.any? %>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr class="active">
+            <th>Title</th>
+            <th>Name</th>
+            <th>Time</th>
+            <th>Summary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @all_surveyresults_groupedby_surveyid.each do |survey| %>
+          <% i = 1 %>
+            <tr>
+              <td><%= Survey.find(survey.survey_id).title %></td>
+              <td><%= Survey.find(survey.survey_id).author %></td>
+              <td><%= time_ago_in_words(Survey.find(survey.survey_id).created_at) %> ago</td>
+              <td title="<% Survey.find(survey.survey_id).survey_results.each do |result| %><% if(result.name.blank?)%><%= "respondent #{i}" %><% else %><%= result.name %><% end %> - <%= result.helpful_scale %><% if(!result.feedback.blank?)%><%= " (#{result.feedback})" %><% end %><% if (result != Survey.find(survey.survey_id).survey_results.last) %>, <% end %> <% i += 1 %> <% end %>"><%= Survey.find(survey.survey_id).survey_results.average(:helpful_scale).round(2) %> (<%= Survey.find(survey.survey_id).survey_results.count %> responses)</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p>No surveys results have been submitted at the moment.</p> 
+    <% end %>
+  </div>
+</div>
+
+<%= render partial: "shared/admin_active_menu_jQuery" %>

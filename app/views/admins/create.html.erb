@@ -4,26 +4,32 @@
 
 <%= render "shared/admin_navbar"%>
 
+<div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+		<% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <p class="errors"><%= error %></p>
+      <% end %>
+		<% end %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+		<% if flash[:success] %>
+			<p class="successes"><%= flash[:success] %></p>
+		<% end %>
+	</div>
+</div>
+
 <%= render partial: "new_survey_form"%>
 
-<%= render partial: "review_results"%>
-
+<%= render partial: "shared/admin_active_menu_jQuery" %>
 
 <script>
-  var currentLocation = window.location.hash;
-  updateActiveState(currentLocation);
-
-  $(document).on('click', 'a', function() {
-    $('.active').removeClass('active');
-    currentLocation = $(this).attr('href');
-    updateActiveState(currentLocation);
+  $(document).on('click', '#create_survey_button', function() {
+    var inputPassword = prompt("Type in password to create survey.");
+    $('#create_survey_button').addClass('hidden');
+    $('#create_survey_button').val(inputPassword);
   })
-
-  function updateActiveState(location){
-    if(location == "" || location == "#") {
-      $("a[href='#']").parent().addClass('active');
-    } else {
-      $("a[href='#results']").parent().addClass('active');
-    }
-  }
 </script>

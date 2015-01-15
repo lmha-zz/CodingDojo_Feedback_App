@@ -1,4 +1,9 @@
 <% if @all_surveys.any? %>
+  <% if @all_surveys.count === 1%>
+    <script>
+      window.location.href = window.location.origin+"/meeting/"+"<%= @all_surveys.first.id %>";
+    </script>
+  <% end %>
   <table class="table table-bordered table-striped">
     <thead>
       <tr class="active">
@@ -10,9 +15,9 @@
     <tbody>
       <% @all_surveys.each do |survey| %>
         <tr>
-          <td><%= survey.title %></td>
+          <td><%= link_to "#{survey.title}", "/meeting/#{survey.id}" %></td>
           <td><%= survey.author %></td>
-          <td><%= survey.created_at %></td>
+          <td>expires in <%= distance_of_time_in_words(Time.now, survey.created_at+30.minutes, include_seconds: true) %></td>
         </tr>
       <% end %>
     </tbody>

@@ -12,6 +12,14 @@
 
     <div class="row">
       <div class="col-sm-12">
+        <% if flash[:errors] %>
+          <p class="errors"><%= flash[:errors] %></p>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
         <%= form_for(@surveyresult, :html => { :class => 'form-horizontal' } ) do |s| %>
           <div class="form-group">
             <%= s.label :name, "Name (optional):", :class => "col-sm-2" %>
