@@ -14,6 +14,6 @@ class SurveyResultsController < ApplicationController
 
   private
   def surveyresult_params
-    params.require(:survey_result).permit(:name, :helpful_scale, :feedback)
+    params.require(:survey_result).permit(:respondent_name, :helpful_scale, :feedback)
   end
 end

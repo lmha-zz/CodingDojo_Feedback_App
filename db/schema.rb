@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150113195411) do
+ActiveRecord::Schema.define(version: 20150115032045) do
 
   create_table "survey_results", force: true do |t|
-    t.string   "name"
+    t.string   "respondent_name"
     t.integer  "helpful_scale"
     t.text     "feedback"
     t.integer  "survey_id"
