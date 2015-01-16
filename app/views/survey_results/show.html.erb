@@ -20,10 +20,10 @@
           <% @all_surveys.each do |survey| %>
           <% i = 1 %>
             <tr>
-              <td><%= Survey.find(survey.survey_id).title %></td>
-              <td><%= Survey.find(survey.survey_id).author %></td>
-              <td><%= time_ago_in_words(Survey.find(survey.survey_id).created_at) %> ago</td>
-              <td title="<% Survey.find(survey.survey_id).survey_results.all.each do |result| %><% if(result.respondent_name.blank?)%><%= "respondent #{i}" %><% else %><%= result.respondent_name %><% end %> - <%= result.helpful_scale %><% if(!result.feedback.blank?)%><%= " (#{result.feedback})" %><% end %><% if (result != Survey.find(survey.survey_id).survey_results.last) %>, <% end %> <% i += 1 %> <% end %>"><%= Survey.find(survey.survey_id).survey_results.average(:helpful_scale).round(2) %> (<%= Survey.find(survey.survey_id).survey_results.count %> responses)</td>
+              <td><%= Survey.find(survey.id).title %></td>
+              <td><%= Survey.find(survey.id).author %></td>
+              <td><%= time_ago_in_words(Survey.find(survey.id).created_at) %> ago</td>
+              <td title="<% Survey.find(survey.id).survey_results.all.each do |result| %><% if(result.respondent_name.blank?)%><%= "respondent #{i}" %><% else %><%= result.respondent_name %><% end %> - <%= result.helpful_scale %><% if(!result.feedback.blank?)%><%= " (#{result.feedback})" %><% end %><% if (result != Survey.find(survey.id).survey_results.last) %>, <% end %> <% i += 1 %> <% end %>"><%= Survey.find(survey.id).survey_results.average(:helpful_scale).round(2) %> (<%= Survey.find(survey.id).survey_results.count %> responses)</td>
             </tr>
           <% end %>
         </tbody>
