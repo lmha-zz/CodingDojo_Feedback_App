@@ -45,4 +45,4 @@ gem 'spring',        group: :development
 
 gem 'hirb'
 
-ruby '2.1'
+ruby '2.1.5'
