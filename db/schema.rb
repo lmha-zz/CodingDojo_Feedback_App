@@ -13,6 +13,8 @@
 
 ActiveRecord::Schema.define(version: 20150115032045) do
 
+  enable_extension "plpgsql"
+
   create_table "survey_results", force: true do |t|
     t.string   "respondent_name"
     t.integer  "helpful_scale"
