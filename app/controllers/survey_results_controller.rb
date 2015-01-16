@@ -8,8 +8,8 @@ class SurveyResultsController < ApplicationController
   end
 
   def show
-    @all_surveyresults = SurveyResult.all;
-    @all_surveyresults_groupedby_surveyid = SurveyResult.all.group("survey_id").order('created_at DESC').limit(200);
+    @all_surveyresults = SurveyResult.all.group(:id);
+    @all_surveyresults_groupedby_surveyid = SurveyResult.all.group(:survey_id).order('created_at DESC').limit(200);
   end
 
   private
