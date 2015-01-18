@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body .ui-tooltip {
+	border-width: 2px;
+}
+.contentWrapper {
+	padding-top: 70px;
+}
 .ui-tooltip {
 	padding: 5px;
 	position: absolute;
@@ -22,7 +28,4 @@
 	padding: 0;
 	position: absolute;
 	width: 1px;
-}
-body .ui-tooltip {
-	border-width: 2px;
 }

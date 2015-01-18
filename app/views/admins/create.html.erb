@@ -4,25 +4,27 @@
 
 <%= render "shared/admin_navbar"%>
 
-<div class="row">
-	<div class="col-sm-10 col-sm-offset-1">
-		<% if flash[:errors] %>
-      <% flash[:errors].each do |error| %>
-        <p class="errors"><%= error %></p>
-      <% end %>
-		<% end %>
-	</div>
-</div>
+<div class="contentWrapper">
+  <div class="row">
+  	<div class="col-sm-10 col-sm-offset-1">
+  		<% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <p class="errors"><%= error %></p>
+        <% end %>
+  		<% end %>
+  	</div>
+  </div>
 
-<div class="row">
-	<div class="col-sm-10 col-sm-offset-1">
-		<% if flash[:success] %>
-			<p class="successes"><%= flash[:success] %></p>
-		<% end %>
-	</div>
-</div>
+  <div class="row">
+  	<div class="col-sm-10 col-sm-offset-1">
+  		<% if flash[:success] %>
+  			<p class="successes"><%= flash[:success] %></p>
+  		<% end %>
+  	</div>
+  </div>
 
-<%= render partial: "new_survey_form"%>
+  <%= render partial: "new_survey_form"%>
+</div>
 
 <%= render partial: "shared/admin_active_menu_jQuery" %>
 
