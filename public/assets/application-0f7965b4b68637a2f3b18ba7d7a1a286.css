@@ -1,0 +1,83 @@
+/* line 4, /Users/old_mbp/Documents/Coding_Dojo_Workspace/Feedback_App/feedbackApp/app/assets/stylesheets/admins.css.scss */
+.errors {
+  color: red;
+}
+
+/* line 7, /Users/old_mbp/Documents/Coding_Dojo_Workspace/Feedback_App/feedbackApp/app/assets/stylesheets/admins.css.scss */
+.successes {
+  color: green;
+}
+
+/* line 10, /Users/old_mbp/Documents/Coding_Dojo_Workspace/Feedback_App/feedbackApp/app/assets/stylesheets/admins.css.scss */
+.errors, .successes {
+  padding: 0 0 10px 0;
+}
+
+/* line 13, /Users/old_mbp/Documents/Coding_Dojo_Workspace/Feedback_App/feedbackApp/app/assets/stylesheets/admins.css.scss */
+.contentWrapper {
+  padding-top: 70px;
+}
+/* line 5, /Users/old_mbp/Documents/Coding_Dojo_Workspace/Feedback_App/feedbackApp/app/assets/stylesheets/survey_results.css.scss */
+body .ui-tooltip {
+  border-width: 2px;
+}
+
+/* line 8, /Users/old_mbp/Documents/Coding_Dojo_Workspace/Feedback_App/feedbackApp/app/assets/stylesheets/survey_results.css.scss */
+thead th {
+  background-color: whitesmoke;
+}
+
+/* line 11, /Users/old_mbp/Documents/Coding_Dojo_Workspace/Feedback_App/feedbackApp/app/assets/stylesheets/survey_results.css.scss */
+.contentWrapper {
+  padding-top: 70px;
+}
+
+/* line 14, /Users/old_mbp/Documents/Coding_Dojo_Workspace/Feedback_App/feedbackApp/app/assets/stylesheets/survey_results.css.scss */
+.ui-tooltip {
+  padding: 5px;
+  position: absolute;
+  z-index: 9999;
+  max-width: 500px;
+  -webkit-box-shadow: 0 0 5px #aaa;
+  box-shadow: 0 0 5px #aaa;
+  white-space: pre-wrap;
+  font-family: Arial;
+  background-color: white;
+}
+
+/* line 25, /Users/old_mbp/Documents/Coding_Dojo_Workspace/Feedback_App/feedbackApp/app/assets/stylesheets/survey_results.css.scss */
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/* line 5, /Users/old_mbp/Documents/Coding_Dojo_Workspace/Feedback_App/feedbackApp/app/assets/stylesheets/surveys.css.scss */
+td > a {
+  text-decoration: underline;
+}
+
+/* line 8, /Users/old_mbp/Documents/Coding_Dojo_Workspace/Feedback_App/feedbackApp/app/assets/stylesheets/surveys.css.scss */
+thead th {
+  background-color: whitesmoke;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
