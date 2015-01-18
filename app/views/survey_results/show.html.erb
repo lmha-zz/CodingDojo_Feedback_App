@@ -39,7 +39,8 @@
   $(document).tooltip();
   <% @all_surveys.each do |survey| %>
   <% j = 1 %>
-  var tooltipContent = <%= "<% Survey.find(survey.id).survey_results.all.each do |result| %><% if(result.respondent_name.blank?)%><%= 'respondent #{i}' %><% else %><%= result.respondent_name %><% end %> - <%= result.helpful_scale %><% if(!result.feedback.blank?)%><%= ' (#{result.feedback})' %><% end %><% if (result != Survey.find(survey.id).survey_results.last) %>, <% end %> <% i += 1 %> <% end %>" %>
+  var tooltipContent = "<% Survey.find(survey.id).survey_results.all.each do |result| %><% if(result.respondent_name.blank?)%><%= 'respondent #{i}' %><% else %><%= result.respondent_name %><% end %> - <%= result.helpful_scale %><% if(!result.feedback.blank?)%><%= ' (#{result.feedback})' %><% end %><% if (result != Survey.find(survey.id).survey_results.last) %>,
+  <% end %><% i += 1 %><% end %>";
   console.log(tooltipContent);
   $('#survey<%= j %>Responses').tooltip("option", "content", tooltipContent);
   <% end %>
